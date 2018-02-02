@@ -1,0 +1,28 @@
+open Getopt
+
+
+let length = ref false
+and help   = ref false
+
+
+let specs = [
+    ( 'l', "length", (length := true), None);
+    ( 'h', "help",   (help   := true), None);
+  ]
+
+let main argc argv =
+  if !help then
+    Printf.printf "Usage: my-project [flags] [args]";
+    Printf.printf "Available flags:";
+    Printf.printf "  -length    prints the lengths of each of the arguments";
+    Printf.printf "  -help      prints the help message";
+  else
+    for i = 0 to argc do
+      if !length then Printf.printf !length argv.(i);
+      else Printf.printf argv.(i);
+    done
+;;
+
+let _ =
+  parse_cmdline specs print_endline;
+  main (Array.length Sys.argv) Sys.argv;

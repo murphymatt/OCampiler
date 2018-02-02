@@ -1,0 +1,4 @@
+true: package(str)
+true: package(core, ppx_jane)
+true: thread
+true: unsafe

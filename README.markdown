@@ -1,8 +1,9 @@
-Matt Murphy -- OCampiler
+# Matt Murphy -- OCampiler
 
+## Overview:
 This is a simple compiler build using ocaml. This compiler will work for a relatively simple lisp-style language. Currently all that it does is print out the input arguments.
 
-# INSTRUCTIONS:
+## INSTRUCTIONS:
 Install Core
 
 `opam install core`
